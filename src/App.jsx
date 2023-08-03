@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import styled from '@emotion/styled'
 import ImageCryptocurrencies from './img/imagen-criptos.png'
 import Form from './components/form'
@@ -39,8 +38,6 @@ const Image= styled.img`
 `
 
 function App() {
-
-
   return (
     <Container>
       <Image src={ImageCryptocurrencies} alt='image of cryptocurrencies'/>

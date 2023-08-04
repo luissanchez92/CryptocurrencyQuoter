@@ -1,7 +1,10 @@
 import styled from '@emotion/styled'
 import ImageCryptocurrencies from './img/imagen-criptos.png'
 import Form from './components/form'
+import Results from './components/Results'
+import Spinner from './components/Spinner'
 import { useState, useEffect } from 'react'
+
 
 const Heading= styled.h1`
   font-family: 'Lato', sans-serif;
@@ -41,10 +44,12 @@ const Image= styled.img`
 function App() {
   const [coins, setCoins]=useState({})
   const [response, setResponse]=useState({})
+  const [loading, setLoading]=useState(false)
 
   useEffect(()=>{
     if (Object.keys(coins).length>0){
       const quote= async()=>{
+        setLoading(true)
         const {state, currency}=coins
         const url= `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${currency}&tsyms=${state}`
 
@@ -53,6 +58,7 @@ function App() {
         
         console.log(results.DISPLAY[currency][state])
         setResponse(results.DISPLAY[currency][state])
+        setLoading(false)
 
       }
       quote()
@@ -65,6 +71,8 @@ function App() {
       <div>
         <Heading>Quote the value of cryptocurrencies</Heading>
         <Form setCoins={setCoins}/>
+        {loading && <Spinner/>}
+        {response.PRICE && <Results response={response}/>}
       </div>
       
 

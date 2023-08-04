@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import ImageCryptocurrencies from './img/imagen-criptos.png'
 import Form from './components/form'
+import { useState, useEffect } from 'react'
 
 const Heading= styled.h1`
   font-family: 'Lato', sans-serif;
@@ -38,12 +39,32 @@ const Image= styled.img`
 `
 
 function App() {
+  const [coins, setCoins]=useState({})
+  const [response, setResponse]=useState({})
+
+  useEffect(()=>{
+    if (Object.keys(coins).length>0){
+      const quote= async()=>{
+        const {state, currency}=coins
+        const url= `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${currency}&tsyms=${state}`
+
+        const responseAPI= await fetch(url)
+        const results= await responseAPI.json()
+        
+        console.log(results.DISPLAY[currency][state])
+        setResponse(results.DISPLAY[currency][state])
+
+      }
+      quote()
+    }
+
+  },[coins])
   return (
     <Container>
       <Image src={ImageCryptocurrencies} alt='image of cryptocurrencies'/>
       <div>
-        <Heading>Cotiza el valor de las criptomonedas</Heading>
-        <Form/>
+        <Heading>Quote the value of cryptocurrencies</Heading>
+        <Form setCoins={setCoins}/>
       </div>
       
 

@@ -51,7 +51,7 @@ Error generating stack: `+i.message+`
     padding: 14px;
     border-radius: 5px;
 
-`,Os=(e,t)=>{const[n,r]=G.useState("");return[n,()=>z.jsxs(z.Fragment,{children:[z.jsx(Lm,{children:e}),z.jsxs(Rm,{value:n,onChange:i=>r(i.target.value),children:[z.jsx("option",{value:"",children:"select"}),t.map(i=>z.jsx("option",{value:i.id,children:i.name},i.id))]})]})]},Om=[{id:"USD",name:"Dolar-EEUU"},{id:"EUR",name:"Euro"},{id:"GBP",name:"Libra-Esterlina"},{id:"ARS",name:"Peso-Argentina"},{id:"COP",name:"Peso-Colombia"},{id:"MXN",name:"Peso-Mexico"},{id:"RUB",name:"Rublo-Russia"},{id:"BRl",name:"Real-Brasil"},{id:"RUB",name:"Rublo-Russia"}],jm=({children:e})=>{const t=Ee.div`
+`,Os=(e,t)=>{const[n,r]=G.useState("");return[n,()=>z.jsxs(z.Fragment,{children:[z.jsx(Lm,{children:e}),z.jsxs(Rm,{value:n,onChange:i=>r(i.target.value),children:[z.jsx("option",{value:"",children:"select"}),t.map(i=>z.jsx("option",{value:i.id,children:i.name},i.id))]})]})]},Om=[{id:"USD",name:"Dolar-EEUU"},{id:"EUR",name:"Euro"},{id:"GBP",name:"Libra-Esterlina"},{id:"ARS",name:"Peso-Argentina"},{id:"COP",name:"Peso-Colombia"},{id:"MXN",name:"Peso-Mexico"},{id:"RUB",name:"Rublo-Russia"},{id:"BRl",name:"Real-Brasil"}],jm=({children:e})=>{const t=Ee.div`
     background-color: #FF0000;
     color: #FFF;
     padding: 15px;

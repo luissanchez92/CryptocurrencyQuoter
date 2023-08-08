@@ -6,8 +6,7 @@ const money=[
     {id: 'COP', name: 'Peso-Colombia'},
     {id: 'MXN', name: 'Peso-Mexico'},
     {id: 'RUB', name: 'Rublo-Russia'},
-    {id: 'BRl', name: 'Real-Brasil'},
-    {id: 'RUB', name: 'Rublo-Russia'}
+    {id: 'BRl', name: 'Real-Brasil'}
 ]
 
 export { money}
